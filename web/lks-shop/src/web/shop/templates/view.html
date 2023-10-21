@@ -1,0 +1,33 @@
+{% extends '_base.html' %}
+
+{% block 'title' %}View image{% endblock %}
+
+{% block 'content' %}
+<main class="container">
+  <div class="row mt-5">
+    <div class="mx-auto col-6">
+      <div class="d-flex">
+        <h2>{{ image.title | safe }}</h2>
+        <div class="ms-3 my-auto">
+          <a href="{% url 'report-image' id=image.id %}" class="btn btn-sm btn-danger">Report to admin</a>
+        </div>
+      </div>
+      {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+      <img width="500px" src="/static/uploads/{{ image.id }}.{{ image.extension }}" />
+    </div>
+  </div>
+</main>
+{% endblock %}

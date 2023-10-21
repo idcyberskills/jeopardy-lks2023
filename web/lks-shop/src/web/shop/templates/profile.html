@@ -1,0 +1,51 @@
+{% extends '_base.html' %}
+
+{% block 'title' %}Profile{% endblock %}
+
+{% block 'content' %}
+<main class="container">
+  <div class="row mt-5">
+    <div class="mx-auto col-6">
+      <h2>Profile</h2>
+      {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+      <div class="card">
+        <div class="card-body row">
+          <div class="col-3">
+            <img class="w-100" src="/static/image/photo/{{ profile.image }}">
+            <a href="{% url 'update_profile' %}" class="btn btn-primary">Change picture</a>
+          </div>
+          <div class="col">
+            <h2>{{ profile.user.username }}</h2>
+            <p>Rp {{profile.money}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-5">
+        <div class="card-body">
+          <strong>Your order history</strong>
+          <ul>
+            {% for item in profile.bought.all %}
+              <li>
+                <a href="{% url 'show_product' item.item_id %}">{{ item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

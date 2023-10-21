@@ -1,0 +1,36 @@
+{% extends '_base.html' %}
+
+{% block 'title' %}Update Profile{% endblock %}
+
+{% block 'content' %}
+<main class="container">
+  <div class="row mt-5">
+    <div class="mx-auto col-6">
+      <h2>Update Profile</h2>
+      {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+      <p></p>
+      <form class="mt-3" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="image" class="form-label">Picture</label>
+          <input type="file" class="form-control" id="image" name="image" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

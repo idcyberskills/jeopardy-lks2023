@@ -1,0 +1,41 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$gJxT2sSTs2VuNpZN6Uo2jo$Xrn0NoyHummkmsDHVEMoFuzFCh++FNCdOKlLuZQtJRg=",
+        "last_login": "2023-10-20T23:44:43.098Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-10-20T23:44:15.618Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "shop.profile",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "money": 1000000000,
+        "image": "default.png",
+        "bought": []
+    }
+},
+{
+    "model": "shop.item",
+    "pk": 1,
+    "fields": {
+        "item_id": "7943080b-0d40-4d16-bd60-f592e9f99a5d",
+        "title": "Flag",
+        "description": "Flags are typically represented as a string of characters, such as a sequence of letters, numbers, and symbols, enclosed in curly braces.\r\n\r\nWhen a participant successfully completes a challenge, they are usually required to submit the found flag to the competition's platform or organizers to earn points and demonstrate that they have solved the challenge. The flag serves as proof of the participant's success in completing the task.",
+        "price": 1000,
+        "owner": 1
+    }
+}
+]

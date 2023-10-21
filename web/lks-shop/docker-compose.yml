@@ -1,0 +1,26 @@
+version: "3"
+services:
+  web:
+    build: .
+    restart: always
+    environment:
+      SECRET_KEY: knaDA*3oudwid83rfed
+      ADMIN_REPORT_URL: http://xssbot:5000/visit
+      # [HOST_URL]
+      # For production: http://<ip>:9019
+      # For local: http://web
+      HOST_URL: http://web
+      PHOTO_BASE_DIR: /var/www/html/static/image/photo
+    ports:
+    - "9019:80"
+  xssbot:
+    image: faishol27/xssbot:latest
+    volumes:
+    - ./src/bot/scenario.js:/home/bot/scenario.js
+    environment:
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: theSup3rP@ssw0rd
+      BOT_PORT: 5000
+    restart: always
+    dns:
+    - 8.8.8.8

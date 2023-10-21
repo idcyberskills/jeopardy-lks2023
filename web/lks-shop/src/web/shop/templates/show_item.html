@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+
+{% block 'title' %}{{item.title}}{% endblock %}
+
+{% block 'content' %}
+<main class="container">
+  <div class="row mt-5">
+    <div class="mx-auto col-6">
+      <h2>{{ item.title }} (Rp {{item.price}})</h2>
+      <a href="{% url 'report_product' item.item_id %}" class="btn btn-danger mb-4">Report to admin</a>
+      {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+      <p>{{ item.description | safe }}</p>
+      <form class="mt-5" method="POST" action="{% url 'buy_product' item.item_id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label class="form-label">Quantity</label>
+          <input type="number" min="0" class="form-control" id="quantity" name="quantity" value="0" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Buy</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends '_base.html' %}
+
+{% block 'title' %}Login{% endblock %}
+
+{% block 'content' %}
+<main class="container">
+  <div class="row mt-5">
+    <div class="mx-auto col-6">
+      <h2>Login</h2>
+      {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+      <form class="mt-3" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="txtTitle" class="form-label">Username</label>
+          <input type="text" class="form-control" id="txtTitle" name="username" maxlength=200 required>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Password</label>
+          <input type="password" class="form-control" id="image" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
