@@ -1,0 +1,15 @@
+version: '3'
+services:
+  blackpandora:
+    build:
+      context: .
+    working_dir: /home/silentsea
+    container_name: silentcrime
+    restart: always
+    ports:
+      - "27542:27542"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+      - 1.1.1.1
+      - 1.0.0.1

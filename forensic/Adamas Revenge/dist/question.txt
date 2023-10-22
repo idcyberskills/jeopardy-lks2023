@@ -1,0 +1,14 @@
+1. There's a LSASS Memory Dumping Attempt using one of the tools that is located in the user's Public folder. What's the name of that tool (including extension, for example: haha.exe)?
+
+2. Regarding to previous question, the dumped file is located in the temporary folder. What's the name of the dumped file (including extension, for example: password.raw)?
+
+3. There's a "fake" Windows service installed from a non-existing user temporary folder. The service itself is an executable with ".exe" extension. What's the name of that executable (excluding the extension, for example if the name is yaya.exe, then the answer is yaya)?
+
+4. There seems to be a shceduled task to be run. Although it's not running yet, How often does this task run in minutes and when's the scheduled date? Concatenate the answer with underscores! (_)
+
+Example:  If you found that the task is running every hour and the scheduled date is 13-08-2023 08:20:32, then the answer is 60_13-08-2023_08:20:32
+
+5. There's a persistence technique used from the malware. It executes a technique just like from the MITRE ATT&CK ID T1037.100. What's the full command which executes in a boot/logon initialization script?
+
+For example, if the command is "powershell.exe -ep Bypass F:\Capariya\189209209309302020.ps1" then it's the answer (include all the symbols, digits and spaces)
+

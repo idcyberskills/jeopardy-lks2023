@@ -1,0 +1,14 @@
+All of the following questions are related to events BEFORE October 9th 2023.
+
+1. In all installed agents, how many times successful authentication happens and how many times failed login attempts? (concat sucessful and failed with underscores RESPECTIVELY)
+Example: 5 failed, 2 success then answer is 2_5
+
+2. There has been a login to a non-existent user in the default agent server via SSH. When does this happening for the first time? How many times does it occur?
+Answer in a format like 2022-09-14 13:02:15.012_100000
+
+3. There has been an account deletion in one of the installed agents located in Windows Server. What's the account name & its SID which is deleted? Since this activity also triggers a Windows Event, what's the event ID number?
+
+Format answer: accountname_sidnumber_eventidnumber, example: rudolph_S-1-5-18919109109_2176
+
+4. According to CIS Microsoft Windows 10 Enterprise Benchmark v1.12.0 policy listed, it looks like Kerberos Encryption Type is still insecure. What's the name of registry key that checks this type?
+Answer format excludes the HIVE , for example if the registry full path key is HKLM\Software\Paramont\Enckeytype then the answer is Enckeytype.

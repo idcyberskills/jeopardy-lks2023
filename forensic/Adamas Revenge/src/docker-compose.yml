@@ -1,0 +1,15 @@
+version: '3'
+services:
+  blackpandora:
+    build:
+      context: .
+    working_dir: /home/adamasmem
+    container_name: adamasmem
+    restart: always
+    ports:
+      - "27544:27544"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+      - 1.1.1.1
+      - 1.0.0.1

@@ -1,0 +1,10 @@
+1. How many agents are available in the Wazuh Dashboard Server (including the default) ? What are their names? (concat with underscores)
+Example: 3_toba_semeru_jenengans
+
+2. What's the hostname of the agent which has a Windows 10 Enterprise product?
+Example: JUMINTEN-ABC123
+
+3. In the last 1 year, when does the Wazuh logging started for the first time?
+Answer in a format YYYY-MM-DD HH:MM:SS:MLS, for example 2021-08-17 14:32:21.169
+
+4. How many TOTAL events related with MITRE ATT&CK from October 7th 2023 to October 8th 2023?
