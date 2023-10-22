@@ -1,0 +1,14 @@
+service canary
+{
+        disable = no
+        socket_type = stream
+        protocol = tcp
+        wait = no
+        user = canary
+        type = UNLISTED
+        port = 11102
+        bind = 0.0.0.0
+        server = /home/canary/run
+        per_source = 10
+        rlimit_cpu = 20
+}

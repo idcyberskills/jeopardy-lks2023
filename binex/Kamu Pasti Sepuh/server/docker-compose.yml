@@ -1,0 +1,10 @@
+version: '3'
+services:
+  heap:
+    image: heap
+    build: .
+    restart: unless-stopped
+    environment:
+      - TERM=xterm
+    ports:
+      - "11103:11103"

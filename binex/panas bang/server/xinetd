@@ -1,0 +1,14 @@
+service warm
+{
+        disable = no
+        socket_type = stream
+        protocol = tcp
+        wait = no
+        user = warm
+        type = UNLISTED
+        port = 11101
+        bind = 0.0.0.0
+        server = /home/warm/run
+        per_source = 10
+        rlimit_cpu = 20
+}

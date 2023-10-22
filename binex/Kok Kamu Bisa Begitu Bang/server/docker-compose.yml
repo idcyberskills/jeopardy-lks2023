@@ -1,0 +1,10 @@
+version: '3'
+services:
+  canary:
+    image: canary
+    build: .
+    restart: unless-stopped
+    environment:
+      - TERM=xterm
+    ports:
+      - "11102:11102"
