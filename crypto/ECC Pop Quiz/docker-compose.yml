@@ -1,0 +1,10 @@
+version: '3'
+services:
+  eccpopquiz:
+    image: eccpopquiz
+    build: .
+    restart: unless-stopped
+    environment:
+      - TERM=xterm
+    ports:
+      - "13371:13371"
