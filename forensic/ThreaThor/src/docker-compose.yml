@@ -1,6 +1,6 @@
 version: '3'
 services:
-  blackpandora:
+  adamaspcap:
     build:
       context: .
     working_dir: /home/adamaspcap

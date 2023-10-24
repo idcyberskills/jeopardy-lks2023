@@ -1,6 +1,6 @@
 version: '3'
 services:
-  blackpandora:
+  adamasmem:
     build:
       context: .
     working_dir: /home/adamasmem
