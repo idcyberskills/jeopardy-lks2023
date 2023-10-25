@@ -2,15 +2,15 @@ import mysql.connector
 
 class DBManager:
     def __init__(self, database='canarium', host="db", user="root", password_file=None):
-        # pf = open(password_file, 'r')
+        pf = open(password_file, 'r')
         self.connection = mysql.connector.connect(
             user=user, 
-            password="",
+            password=pf.read(),
             host=host, # name of the mysql service as set in the docker compose file
             database=database,
             auth_plugin='mysql_native_password'
         )
-        # pf.close()
+        pf.close()
         self.cursor = self.connection.cursor(dictionary=True, buffered=True)
     
     def populate_db(self):
