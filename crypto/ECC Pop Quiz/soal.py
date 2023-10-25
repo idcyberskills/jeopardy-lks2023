@@ -43,7 +43,7 @@ print(f"y = ???")
 verify_ans(y)
 
 E,p,a,b = gen_curve()
-P = list(E.find_points_rand(1)[0])
+P = list(E.find_points_rand(1)[0])[0]
 x, y = P
 
 print("Curve: y^2 = x^3 + ax + b (mod p)")
@@ -56,7 +56,7 @@ print(f"b = ???")
 verify_ans(b)
 
 E,p,a,b = gen_curve()
-P = list(E.find_points_rand(1)[0])
+P = list(E.find_points_rand(1)[0])[0]
 x, y = P
 
 print("Curve: y^2 = x^3 + ax + b (mod p)")
@@ -69,8 +69,8 @@ print(f"a = ???")
 verify_ans(a)
 
 E,p,a,b = gen_curve()
-P = list(E.find_points_rand(1)[0])
-P2 = list(E.find_points_rand(1)[0])
+P = list(E.find_points_rand(1)[0])[0]
+P2 = list(E.find_points_rand(1)[0])[0]
 x, y = P
 x1, y1 = P2
 print("Curve: y^2 = x^3 + ax + b (mod p)")
