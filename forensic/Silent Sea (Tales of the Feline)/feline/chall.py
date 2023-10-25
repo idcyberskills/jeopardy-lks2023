@@ -49,7 +49,7 @@ print("""
 4. How many TOTAL events related with MITRE ATT&CK from October 7th 2023 to October 8th 2023?
     """)
 answer4 = input(">>: ")
-if answer4 == "356":
+if answer4 == "354" or answer4 == "356":
     print('Correct!\n')
     flag4 = True
 else:
