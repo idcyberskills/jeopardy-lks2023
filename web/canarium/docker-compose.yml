@@ -34,7 +34,7 @@ services:
     volumes:
       - ./flag.txt:/flag.txt:ro
     ports:
-      - 8000:8000
+      - 8000
     environment:
       - SECRET_KEY=n0E9myCdkP40EveOq4qubHFRVf75jiCHxDaxnxaDnlzUvHM5ZK
     networks:

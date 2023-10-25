@@ -1,7 +1,7 @@
 import mysql.connector
 
 class DBManager:
-    def __init__(self, database='canarium', host="db", user="root", password_file=None):
+    def __init__(self, database='example', host="db", user="root", password_file=None):
         pf = open(password_file, 'r')
         self.connection = mysql.connector.connect(
             user=user, 
