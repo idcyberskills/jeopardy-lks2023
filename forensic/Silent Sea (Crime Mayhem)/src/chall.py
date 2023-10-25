@@ -8,7 +8,7 @@ In all installed agents, how many times successful authentication happens and ho
 Example: 5 failed, 2 success then answer is 2_5
     """)
 answer1 = input(">>: ")
-if answer1 == "58_250":
+if answer1 == "58_250" or answer1 == "56_250":
     print('Correct!\n')
     flag1 = True
 else:
