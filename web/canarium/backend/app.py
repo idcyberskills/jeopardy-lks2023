@@ -106,7 +106,7 @@ def list_blog():
     posts = conn.query_titles()
 
     canary_id = session.get("canary_id")
-    canary_link = "{}health/{}".format(request.url_root, get_canary_session(canary_id)['canary_id'])
+    canary_link = "{}health/{}".format("http://13.212.234.124:16161/", get_canary_session(canary_id)['canary_id'])
 
     return render_template('index.html', canary_link=canary_link, posts=posts)
 
