@@ -91,8 +91,8 @@ def display_warning():
 
     canary['ip_address'] = get_user_ip_address(request)
     canary['user_agent'] = request.headers.get('User-Agent')
-    
-    if not session['warning_count']:
+
+    if not session.get('warning_count'):
         session['warning_count'] = 1
     else:
         session['warning_count'] = session.get('warning_count') + 1
