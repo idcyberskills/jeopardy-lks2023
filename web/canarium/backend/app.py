@@ -86,13 +86,11 @@ def ban_user(canary_id):
 def display_warning():
     global conn
 
-    test = request.args.get("test")
-
     canary_id = session.get('canary_id')
     canary = get_canary_session(canary_id)
 
-    canary['ip_address'] = test
-    canary['user_agent'] = test
+    canary['ip_address'] = get_user_ip_address(request)
+    canary['user_agent'] = request.headers.get('User-Agent')
 
     canary_blacklist = conn.query_canary_blacklist(canary_id)
     if not canary_blacklist:
