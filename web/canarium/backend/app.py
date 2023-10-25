@@ -91,7 +91,11 @@ def display_warning():
 
     canary['ip_address'] = get_user_ip_address(request)
     canary['user_agent'] = request.headers.get('User-Agent')
-    session['warning_count'] = session.get('warning_count') + 1
+    
+    if not session['warning_count']:
+        session['warning_count'] = 1
+    else:
+        session['warning_count'] = session.get('warning_count') + 1
 
     canary_blacklist = conn.query_canary_blacklist(canary_id)
     if not canary_blacklist:
