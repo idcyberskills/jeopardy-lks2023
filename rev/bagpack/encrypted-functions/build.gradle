@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['path/to/your/source/directory']
+            output.classesDirs = file("$buildDir/classes/java/main")
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'

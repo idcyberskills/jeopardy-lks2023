@@ -1,0 +1,23 @@
+version: '3'
+services:
+  davos:
+    container_name: davos
+    restart: unless-stopped
+    environment:
+      - WEBDAV_USER=user
+      - WEBDAV_PASS=bdChWzznlMlVOEBXmIkjiuJJIE9htIav
+      - NGINX_CLIENT_MAX_BODY_SIZE=500M
+    ports:
+      - '8888:80'
+    volumes:
+      - './storage/public:/var/www/webdav/public'
+      - './storage/restricted:/var/www/webdav/restricted:ro'
+    image: loganmarchione/docker-webdav-nginx:latest
+  web:
+    container_name: web
+    restart: unless-stopped
+    ports:
+      - '15151:80'
+    volumes:
+      - './storage/public:/var/www/html'
+    image: php:8.2-apache
