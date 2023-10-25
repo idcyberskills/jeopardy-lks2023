@@ -91,12 +91,17 @@ def display_warning():
 
     canary['ip_address'] = get_user_ip_address(request)
     canary['user_agent'] = request.headers.get('User-Agent')
+    session['warning_count'] = session.get('warning_count') + 1
 
     canary_blacklist = conn.query_canary_blacklist(canary_id)
     if not canary_blacklist:
         return redirect(url_for('list_blog'))
     else:
-        return render_template_from_html('warning.html', canary_id=canary_id, ip_address=canary['ip_address'], user_agent=canary['user_agent'])
+        if session.get('warning_count') <= 3:
+            return render_template_from_html('warning.html', canary_id=canary_id, ip_address=canary['ip_address'], user_agent=canary['user_agent'])
+        else:
+            message = "No data is shown as you have ignores the previous 3 warnings. Ckckck."
+            return render_template_from_html('warning.html', canary_id=message, ip_address=message, user_agent=message)
 
 @server.route('/')
 def list_blog():
