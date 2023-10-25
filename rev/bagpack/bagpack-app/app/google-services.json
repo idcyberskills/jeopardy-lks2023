@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "810649669499",
+    "project_id": "bagpack---lksn2023",
+    "storage_bucket": "bagpack---lksn2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810649669499:android:cccd0ec6dcfd16c5ccf7de",
+        "android_client_info": {
+          "package_name": "com.siahaan.bagpack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuIpZTL2pGiGtdUQfCsjxMpUJhFaVWf2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

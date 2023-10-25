@@ -1,0 +1,3 @@
+Flask
+mysql-connector==2.2.9
+flask-session
