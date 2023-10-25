@@ -9,7 +9,7 @@ import datetime
 server = Flask(__name__, static_folder='public', static_url_path='')
 server.config["SESSION_PERMANENT"] = False
 server.config["SESSION_TYPE"] = "filesystem"
-server.secret_key = "os.environ['SECRET_KEY']"
+server.secret_key = os.environ['SECRET_KEY']
 conn = None
 
 def render_template_from_html(template_file, **args):
