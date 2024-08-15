@@ -24,3 +24,6 @@ hard
 
 ## Tags
 RSA
+
+## Solve
+Franklin Reiter related message attack, bisa pakai [script umum](https://github.com/ashutosh1206/Crypton/blob/master/RSA-encryption/Attack-Franklin-Reiter/exploit.sage), tetapi harus dimodifikasi sedikit sesuai dengan manipulasinya
